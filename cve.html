@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CVE Search — CyberNews</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+       <a class="brand" href="index.html"><span class="logo-dot"></span>CyberNews</a>
+      <nav class="nav">
+        <a href="threat-feed.html">Threat Feed</a>
+        <a href="cve.html">CVE</a>
+        <a href="reports.html">Reports</a>
+        <a href="about.html">Benefits</a>
+      </nav>
+      <div class="actions">
+        <button id="toggleTheme3" class="icon-btn" title="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </header>
+
+    <section class="ticker-wrap">
+      <div class="ticker-label">Breaking</div>
+      <div class="ticker" id="breakingTicker"><div class="ticker-item">Loading latest cyber headlines...</div></div>
+    </section>
+
+      <main class="container">
+      <h1>CVE Vulnerability Search</h1>
+
+      <section class="panel">
+        <div class="cve-search">
+          <input id="cveQuery" placeholder="Search by CVE ID or keyword (e.g., 'CVE-2023-1234' or 'OpenSSL')" />
+          <button id="cveSearchBtn" class="btn neon">Search CVE</button>
+        </div>
+      </section>
+
+      <section id="cveResults" class="panel">
+        <div class="placeholder">Enter a query to search CVE details.</div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div>© <span id="year3"></span> CyberNews</div>
+    </footer>
+  </div>
+
+  <script src="assets/js/news.js"></script>
+  <script src="assets/js/cve.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

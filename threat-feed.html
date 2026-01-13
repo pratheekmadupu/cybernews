@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Threat Feed — CyberNews</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html"><span class="logo-dot"></span>CyberNews</a>
+      <button id="mobileNavToggle2" class="icon-btn mobile-nav" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+      <nav class="nav">
+        <a href="threat-feed.html">Threat Feed</a>
+        <a href="cve.html">CVE</a>
+        <a href="reports.html">Reports</a>
+        <a href="about.html">Benefits</a>
+      </nav>
+      <div class="actions">
+        <button id="toggleTheme2" class="icon-btn" title="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </header>
+
+  <section class="ticker-wrap">
+    <div class="ticker-label">Breaking</div>
+    <div class="ticker" id="breakingTicker"><div class="ticker-item">Loading latest cyber headlines...</div></div>
+  </section>
+
+    <main class="container">
+      <h1>Threat Feed</h1>
+
+      <section class="filter-panel panel">
+        <div class="filters">
+          <label>Search: <input id="feedSearch" placeholder="Search threats, malware, actors" /></label>
+          <label>Category:
+            <select id="categorySelect">
+              <option value="all">All</option>
+              <option value="malware">Malware</option>
+              <option value="ransomware">Ransomware</option>
+              <option value="phishing">Phishing</option>
+              <option value="zero-day">Zero-Day</option>
+            </select>
+          </label>
+          <button id="applyFilters" class="btn ghost">Apply</button>
+        </div>
+      </section>
+
+      <section id="timeline" class="timeline panel">
+        <!-- Timeline entries populated by news.js -->
+        <div class="timeline-empty">Loading threat feed...</div>
+        <div style="margin-top:12px"><button id="moreNewsBtn" class="btn ghost">More News</button></div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div>© <span id="year2"></span> CyberNews</div>
+    </footer>
+  </div>
+
+  <script src="assets/js/news.js"></script>
+  <script src="assets/js/main.js"></script>
+  <!-- News modal -->
+  <div id="newsModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="newsModalClose" aria-label="Close">×</button>
+      <h3>More News</h3>
+      <div id="modalNewsList" class="modal-list"></div>
+      <div style="margin-top:12px;text-align:center;"><button id="modalLoadMore" class="btn ghost">Load more</button></div>
+    </div>
+  </div>
+</body>
+</html>

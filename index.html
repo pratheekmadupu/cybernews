@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CyberNews — Threat Intelligence Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html"><span class="logo-dot"></span>CyberNews</a>
+      <button id="mobileNavToggle" class="icon-btn mobile-nav" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+      <nav class="nav">
+        <a href="threat-feed.html">Threat Feed</a>
+        <a href="cve.html">CVE</a>
+        <a href="reports.html">Reports</a>
+        <a href="about.html">Benefits</a>
+      </nav>
+      <div class="actions">
+        <button id="toggleTheme" class="icon-btn" title="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-inner">
+          <h1>CyberNews — Real-time Threat Intelligence</h1>
+          <p class="subtitle">Breaking updates, CVEs, breach reports, and threat analysis for students and professionals.</p>
+          <div class="hero-cta">
+            <a href="threat-feed.html" class="btn neon">Explore Threat Feed</a>
+            <a href="cve.html" class="btn ghost">Search CVEs</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="ticker-wrap">
+        <div class="ticker-label">Breaking</div>
+        <div class="ticker" id="breakingTicker">
+          <!-- Filled dynamically by news.js -->
+          <div class="ticker-item">Loading latest cyber headlines...</div>
+        </div>
+      </section>
+
+      <section class="cards-grid container">
+        <div class="card panel">
+          <h2>Trending Threats</h2>
+          <div id="trendingList" class="list"></div>
+            <div style="margin-top:12px"><button id="moreNewsBtn" class="btn ghost">More News</button></div>
+        </div>
+
+        <div class="card panel">
+          <h2>Latest Data Breaches</h2>
+          <div id="breachesList" class="grid"></div>
+        </div>
+
+        <div class="card panel full-width">
+          <h2>Severity Overview</h2>
+          <div class="severity-row">
+            <div class="sev-card neon-border">
+              <div class="sev">High</div>
+              <div class="num" id="highCount">—</div>
+            </div>
+            <div class="sev-card neon-border">
+              <div class="sev">Medium</div>
+              <div class="num" id="medCount">—</div>
+            </div>
+            <div class="sev-card neon-border">
+              <div class="sev">Low</div>
+              <div class="num" id="lowCount">—</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> CyberNews — For educational & research use</div>
+      <div class="socials">
+        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/js/news.js"></script>
+  <script src="assets/js/main.js"></script>
+  <!-- News modal -->
+  <div id="newsModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="newsModalClose" aria-label="Close">×</button>
+      <h3>More News</h3>
+      <div id="modalNewsList" class="modal-list"></div>
+      <div style="margin-top:12px;text-align:center;"><button id="modalLoadMore" class="btn ghost">Load more</button></div>
+    </div>
+  </div>
+</body>
+</html>

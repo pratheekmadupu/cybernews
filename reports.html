@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Reports — CyberNews</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+        <a class="brand" href="index.html"><span class="logo-dot"></span>CyberNews</a>
+      <nav class="nav">
+        <a href="threat-feed.html">Threat Feed</a>
+        <a href="cve.html">CVE</a>
+        <a href="reports.html">Reports</a>
+        <a href="about.html">Benefits</a>
+      </nav>
+      <div class="actions">
+        <button id="toggleTheme4" class="icon-btn" title="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </header>
+
+  <section class="ticker-wrap">
+    <div class="ticker-label">Breaking</div>
+    <div class="ticker" id="breakingTicker"><div class="ticker-item">Loading latest cyber headlines...</div></div>
+  </section>
+
+    <main class="container">
+      <h1>Reports</h1>
+      <section class="panel">
+        <h2>Weekly Threat Report</h2>
+        <p>Summary charts and a downloadable PDF.</p>
+        <div class="report-actions">
+          <button id="viewWeeklyBtn" class="btn ghost">View Charts</button>
+          <button id="downloadWeeklyBtn" class="btn neon">Download Weekly PDF</button>
+        </div>
+        <div id="weeklyChartContainer" class="panel" style="margin-top:12px;display:none;">
+          <canvas id="weeklyChart"></canvas>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Monthly Summary</h2>
+        <p>Top sectors impacted, top malware families, and CVSS distribution.</p>
+        <div class="report-actions">
+          <button id="viewMonthlyBtn" class="btn ghost">View Charts</button>
+          <button id="downloadMonthlyBtn" class="btn neon">Download Monthly PDF</button>
+        </div>
+        <div id="monthlyChartContainer" class="panel" style="margin-top:12px;display:none;">
+          <canvas id="monthlyChart"></canvas>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Quarterly & Yearly</h2>
+        <p>Quarterly trends and annual summaries for executive review.</p>
+        <div class="report-actions">
+          <button id="viewQuarterlyBtn" class="btn ghost">View Quarterly</button>
+          <button id="downloadQuarterlyBtn" class="btn neon">Download Quarterly PDF</button>
+        </div>
+        <div id="quarterlyChartContainer" class="panel" style="margin-top:12px;display:none;"><canvas id="quarterlyChart"></canvas></div>
+
+        <div style="margin-top:18px" class="report-actions">
+          <button id="viewYearlyBtn" class="btn ghost">View Yearly</button>
+          <button id="downloadYearlyBtn" class="btn neon">Download Yearly PDF</button>
+        </div>
+        <div id="yearlyChartContainer" class="panel" style="margin-top:12px;display:none;"><canvas id="yearlyChart"></canvas></div>
+      </section>
+
+      <section class="panel">
+        <h2>Sector Breakdown & Exports</h2>
+        <p>See which sectors are most affected and export the raw dataset for offline analysis.</p>
+        <div class="report-actions">
+          <button id="viewSectorBtn" class="btn ghost">View Sector Chart</button>
+          <button id="exportCsvBtn" class="btn neon">Download CSV</button>
+        </div>
+        <div id="sectorChartContainer" class="panel" style="margin-top:12px;display:none;"><canvas id="sectorChart"></canvas></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>© <span id="year4"></span> CyberNews</div>
+    </footer>
+  </div>
+
+  <!-- Charting & PDF libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="assets/js/news.js"></script>
+  <script src="assets/js/reports.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

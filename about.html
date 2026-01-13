@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Benefits — CyberNews</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+        <a class="brand" href="index.html"><span class="logo-dot"></span>CyberNews</a>
+      <nav class="nav">
+        <a href="threat-feed.html">Threat Feed</a>
+        <a href="cve.html">CVE</a>
+        <a href="reports.html">Reports</a>
+        <a href="about.html">Benefits</a>
+      </nav>
+      <div class="actions">
+        <button id="toggleTheme5" class="icon-btn" title="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </header>
+
+  <section class="ticker-wrap">
+    <div class="ticker-label">Breaking</div>
+    <div class="ticker" id="breakingTicker"><div class="ticker-item">Loading latest cyber headlines...</div></div>
+  </section>
+
+    <main class="container panel">
+      <h1>Benefits of CyberNews</h1>
+      <p style="font-size:1.05rem;line-height:1.6;">CyberNews provides curated, timely threat intelligence and educational resources designed to help students and professionals stay ahead of emerging cyber risks. Below are the primary benefits you get from using the platform.</p>
+
+      <section class="panel" style="margin-top:14px">
+        <h2>What You Gain</h2>
+        <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
+          <div class="card panel">
+            <h3>Real-Time Alerts</h3>
+            <p class="muted">Instant access to breaking incidents, CVE disclosures, and active campaigns so you can react quickly.</p>
+          </div>
+          <div class="card panel">
+            <h3>Learning & Research</h3>
+            <p class="muted">Curated analysis, reproducible examples, and links to technical writeups for hands-on learning.</p>
+          </div>
+          <div class="card panel">
+            <h3>Operational Insights</h3>
+            <p class="muted">Severity tagging, timelines, and patterns help teams prioritize patching and mitigations.</p>
+          </div>
+          <div class="card panel">
+            <h3>Reports & Exports</h3>
+            <p class="muted">Download weekly, monthly, and custom reports for sharing with stakeholders and training.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" style="margin-top:18px">
+        <h2>Latest Curated News</h2>
+        <div class="grid" id="benefitsNewsGrid">
+          <div class="breach card panel">
+            <strong>Ransomware campaign hits regional hospitals</strong>
+            <div class="muted">Source: ThreatPost • Jan 10, 2026</div>
+            <div style="margin-top:8px"><span class="badge high">High</span></div>
+          </div>
+          <div class="breach card panel">
+            <strong>Phishing kits using AI-generated landing pages</strong>
+            <div class="muted">Source: The Hacker News • Jan 12, 2026</div>
+            <div style="margin-top:8px"><span class="badge medium">Medium</span></div>
+          </div>
+          <div class="breach card panel">
+            <strong>Zero-day in popular web server disclosed</strong>
+            <div class="muted">Source: BleepingComputer • Jan 13, 2026</div>
+            <div style="margin-top:8px"><span class="badge high">High</span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>© <span id="year5"></span> CyberNews</div>
+    </footer>
+  </div>
+  <script src="assets/js/news.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
